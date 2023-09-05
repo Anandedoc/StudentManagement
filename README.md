@@ -23,7 +23,7 @@ This project also contains unit test cases for the repository, business logic, a
 {
   "userName": "admin",
   "password": "password123",
-}```
+}
 ```
 
 **Request Body:**
@@ -53,7 +53,7 @@ This project also contains unit test cases for the repository, business logic, a
   "name": "John Doe",
   "age": 20,
   "grade": "A"
-}```
+}
 ```
 ### Update Student
 
@@ -68,7 +68,7 @@ This project also contains unit test cases for the repository, business logic, a
   "name": "John Doe",
   "age": 20,
   "grade": "A"
-}```
+}
 ```
 ### GetAll Students
 **Endpoint:** `/Students`
@@ -88,7 +88,7 @@ This project also contains unit test cases for the repository, business logic, a
   "name": "John Doe",
   "age": 20,
   "grade": "A"
-}]```
+}]
 ```
 
 ## Delete Student
