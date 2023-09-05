@@ -11,7 +11,7 @@
         }
 
         [HttpPost]
-        [Route("/login")]
+        [Route("/Login")]
         public IActionResult Login(LoginContract detail)
         {
             try
@@ -25,7 +25,7 @@
             }
         }
 
-        [HttpPost]
+        [HttpGet]
         [Route("/Renew")]
         public IActionResult Renew()
         {
