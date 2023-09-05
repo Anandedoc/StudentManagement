@@ -1,0 +1,10 @@
+.vs/*
+.vs/StudentManagement
+Data/obj/
+obj/
+bin/
+Services/obj
+Services.Test/bin
+StudentManagement.Test/bin
+
+StudentManagement.Test/obj
