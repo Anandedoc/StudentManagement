@@ -2,8 +2,8 @@
 {
     public enum StaffRoleTypes
     {
-        Teacher,
         Librarian,
+        Teacher,
         WatchMan
     }
 }
