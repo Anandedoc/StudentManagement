@@ -25,7 +25,7 @@ jobs:
 
     # Restore dependencies
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore ./StudentManagement/./StudentManagement.csproj
 
     # Build the project
     - name: Build
