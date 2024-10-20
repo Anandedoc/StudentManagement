@@ -37,6 +37,7 @@ jobs:
 
     # Build the Docker image
     - name: Build Docker image
+      working-directory: ./StudentManagement
       run: docker build -t anandedoc/studentmanagement:${{ github.sha }} .
 
     # Log in to GitHub Container Registry or Docker Hub (use secrets for authentication)
