@@ -37,7 +37,7 @@ jobs:
 
     # Build the Docker image
     - name: Build Docker image
-      run: docker build -t Anandedoc/StudentManagement:${{ github.sha }} .
+      run: docker build -t anandedoc/StudentManagement:${{ github.sha }} .
 
     # Log in to GitHub Container Registry or Docker Hub (use secrets for authentication)
     - name: Log in to GitHub Container Registry
@@ -45,7 +45,7 @@ jobs:
 
     # Push the Docker image to the registry
     - name: Push Docker image to GitHub Container Registry
-      run: docker push ghcr.io/Anandedoc/StudentManagement:${{ github.sha }}
+      run: docker push ghcr.io/anandedoc/StudentManagement:${{ github.sha }}
 
     # (Optional) Deploy to a cloud provider or other service
     # - name: Deploy to Kubernetes or Azure (optional)
