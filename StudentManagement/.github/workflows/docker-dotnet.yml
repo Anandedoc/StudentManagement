@@ -1,0 +1,53 @@
+﻿name: .NET Core CI/CD with Docker
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Checkout the code
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    # Set up .NET Core
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '7.x'
+
+    # Restore dependencies
+    - name: Restore dependencies
+      run: dotnet restore
+
+    # Build the project
+    - name: Build
+      run: dotnet build --configuration Release --no-restore
+
+    # Run tests
+    - name: Test
+      run: dotnet test --no-restore --verbosity normal
+
+    # Build the Docker image
+    - name: Build Docker image
+      run: docker build -t Anandedoc/StudentManagement:${{ github.sha }} .
+
+    # Log in to GitHub Container Registry or Docker Hub (use secrets for authentication)
+    - name: Log in to GitHub Container Registry
+      run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+
+    # Push the Docker image to the registry
+    - name: Push Docker image to GitHub Container Registry
+      run: docker push ghcr.io/Anandedoc/StudentManagement:${{ github.sha }}
+
+    # (Optional) Deploy to a cloud provider or other service
+    # - name: Deploy to Kubernetes or Azure (optional)
+    #   run: |
+    #     echo "Your deployment steps here"
